@@ -158,3 +158,47 @@ void warehousing :: peekItem(){
     else cout<<" Warehouse is empty";
     getch();
 }
+
+void warehousing :: changeItem(){
+    int find1;
+    int found = 0;
+    cur = head;
+
+    if(cur != NULL)
+    {
+        cout<<"\n Enter item code to be changed\t: ";
+        cin>>find1;
+        cout<<"\n Input item name to be stored\t: ";
+        cin>>nameItem;
+
+        while(cur!=NULL)
+        {
+            cur->codeItem;
+            if(find1==cur->codeItem)
+            {
+                cout<<"\n Item code " << cur->codeItem << " had been changed to "<< nameItem <<endl;
+                cout<<" Please check warehouse display to see the updated items";
+                cur->nameItem = nameItem;
+              found=1;
+            }
+            cur = cur->next;
+
+        }
+        if(found==0)
+        {
+            cout<<" Item is not found";
+        }
+    }
+    else cout<<" Warehouse is empty";
+    getch();
+}
+
+void warehousing :: destroyItem(){
+    cur = head;
+    while( cur != NULL ){
+        del = cur;
+        head = head->next;
+        delete del;
+        cur = cur->next;
+    }
+}
