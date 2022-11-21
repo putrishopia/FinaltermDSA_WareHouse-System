@@ -29,3 +29,42 @@ struct dataItem{
 //global variable
 dataItem *head, *tail, *cur, *newNode, *del;
 int maximumItem = 5;
+void warehousing::createItem( string nameItem, int codeItem ){
+    head = new dataItem();
+    head->nameItem = nameItem;
+    head->codeItem = codeItem;
+    head->prev = NULL;
+    head->next = NULL;
+    tail = head;
+}
+
+int countItem(){
+    if( head == NULL ){
+        return 0;
+    }else{
+        int nominal = 0; // initialization
+        cur = head;
+
+        while( cur != NULL ){
+            cur = cur->next;
+            nominal++;
+        }
+        return nominal;
+    }
+}
+
+bool isFullItem(){
+    if( countItem() == maximumItem ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool isEmptyItem(){
+    if( countItem() == 0 ){
+        return true;
+    }else{
+        return false;
+    }
+}
