@@ -109,3 +109,52 @@ void warehousing :: popItem(){
 		getch();
 	}
 }
+
+
+void warehousing :: display(){
+    if( isEmptyItem() || tail == NULL ){
+        cout << "Warehouse is empty\t" << endl;
+        getch();
+    }else{
+        cout << "Warehouse items (item name, item code) : " << endl;
+        cur = tail;
+
+        while( cur != NULL ){
+            cout << cur->nameItem << " - " << cur->codeItem << endl;
+            cur = cur->prev;
+        }
+        getch();
+    }
+}
+
+void warehousing :: peekItem(){
+    int find1;
+    int found = 0;
+    cur = head;
+
+    if(cur != NULL)
+    {
+        cout<<"\n Enter item code\t: ";
+        cin>>find1;
+
+        while(cur!=NULL)
+        {
+            cur->codeItem;
+            if(find1==cur->codeItem)
+            {
+                cout<<"\n\n>>>   Item founded   <<<"<<endl;
+                cout<<" Item name\t: "<<cur->nameItem<<endl;
+                cout<<" ------------------------------"<<endl;
+                cout<<"\n\n";
+              found=1;
+            }
+            cur = cur->next;
+        }
+        if(found==0)
+        {
+            cout<<" Item is not found";
+        }
+    }
+    else cout<<" Warehouse is empty";
+    getch();
+}
