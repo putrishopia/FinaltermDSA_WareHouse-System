@@ -202,3 +202,71 @@ void warehousing :: destroyItem(){
         cur = cur->next;
     }
 }
+
+int main(){
+	warehousing w;
+	int ch,nr,isi,operatemenu;
+	while(1)
+	{
+	    operatemenu=0;
+	    system("cls");
+	    cout<<"\n\n=================================================";
+	    cout<<"\n               Warehouse System                  ";
+		cout<<"\n_________________________________________________";
+		cout<<"\n                       Menu                    ";
+        cout<<"\n=================================================";
+		cout<<"\n 1.Input item";
+		cout<<"\n 2.Display Warehouse item";
+		cout<<"\n 3.Find item";
+		cout<<"\n 4.Remove item";
+		cout<<"\n 5.Change item";
+		cout<<"\n 6.Clear Warehouse";
+		cout<<"\n 7.Exit Program";
+
+		while(operatemenu<1||operatemenu>7){
+			cout<<"\n\n Enter command (1-7): ";
+			cin>>operatemenu;
+			if(operatemenu<1||operatemenu>7){
+				cout<<"Wrong input, please enter a new one!";
+				operatemenu=0;
+				cin.clear();
+				cin.ignore(100, '\n');
+			}
+			else{
+				ch=operatemenu;
+
+			}
+		}
+
+		cout<<"\n=================================================";
+		cout<<"\n";
+		switch(ch)
+		{
+			case 1:
+			    w.pushItem();
+                break;
+			case 2:
+			    w.display();
+			    break;
+            case 3:
+                w.peekItem();
+                break;
+            case 4:
+                w.popItem();
+                break;
+			case 5:
+			    w.changeItem();
+                break;
+            case 6:
+			    w.destroyItem();
+                break;
+			case 7:
+			    exit(0);
+                break;
+			default:
+			    cout<<"Wrong Input, Please enter a new one! (press any key)";
+			    getch();
+		}
+	}
+	return 0;
+}
