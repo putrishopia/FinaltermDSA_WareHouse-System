@@ -68,3 +68,44 @@ bool isEmptyItem(){
         return false;
     }
 }
+
+void warehousing :: pushItem(){
+	cout<<" Enter Item name\t: ";
+    cin>>nameItem;
+    cout<<" Enter item code\t: ";
+    cin>>codeItem;
+
+    if( isFullItem() ){
+	    cout<<"\n=================================================";
+        cout << "\nSorry, unable to input new item" << endl;
+        cout << "The Warehouse is Full" << endl;
+        getch();
+    }else{
+        if( isEmptyItem() || tail == NULL ){
+            createItem(nameItem, codeItem);
+        }else{
+            newNode = new dataItem();
+            newNode->nameItem = nameItem;
+            newNode->codeItem = codeItem;
+            newNode->prev = tail;
+            tail->next = newNode;
+            newNode->next = NULL;
+            tail = newNode;
+        }
+    }
+}
+
+void warehousing :: popItem(){
+    if( isEmptyItem() || tail == NULL )
+		{cout<<" Warehouse is empty\n";
+		getch();}
+
+	else
+	{
+		cur=tail;
+		tail=tail->prev;
+		cout<<" Item code "<<cur->codeItem<<" is removed\n";
+		delete(cur);
+		getch();
+	}
+}
