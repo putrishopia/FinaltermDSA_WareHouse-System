@@ -10,8 +10,9 @@ In this Data Structure & Algorithm final project, our group created a warehouse 
 
 Disclaimer:
 
-Please run the program by copy-paste code to IDE. We often encounter unexpected errors when running the code with file format.
-Even though each file was given to a separate member, everyone nevertheless contributed to the creation of the entire program because each member of our team wrote, updated, and integrated their own code during the process.
+- Please run the program by copy-paste code to IDE. We often encounter unexpected errors when running the code with file format.
+
+- Even though each file was given to a separate member, everyone nevertheless contributed to the creation of the entire program because each member of our team wrote, updated, and integrated their own code during the process.
 
 Demonstration Video Link:
 https://drive.google.com/file/d/1I9BgX4QGM55T49VRsrqw2ogzd5bd5rGm/view?usp=share_link
